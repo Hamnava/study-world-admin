@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Loader2, Upload } from "lucide-react"
 import { toast } from 'sonner'
-import { UpdateUserResponse, UploadProfilePicture } from "@/lib/types/response-types"
+import { UpdateUserResponse } from "@/lib/types/response-types"
 import { authFetcher } from "@/lib/auth-fetcher"
 import * as z from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -118,6 +118,8 @@ export default function ProfilePage() {
 
     try {
       const { profilePicture, ...payload } = values;
+      
+      console.log(profilePicture);
       const response = await authFetcher.patch<UpdateUserResponse, z.infer<typeof formSchema>>("/user/update", payload);
       
       // Ensure response is successful

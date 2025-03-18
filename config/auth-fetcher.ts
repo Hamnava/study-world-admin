@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 import { auth } from '@/auth'
 import { getSession } from 'next-auth/react'
 

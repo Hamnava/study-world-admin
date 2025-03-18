@@ -1,6 +1,5 @@
 'use client'
 
-import { AuthUser } from '@/auth'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -31,7 +30,7 @@ import { UserDialog } from '@/components/users/user-dialog'
 import { authFetcher } from '@/lib/auth-fetcher'
 import { Metadata, User } from '@/lib/types/response-types'
 
-import { Loader2, MoreHorizontal, Search, UserPlus } from 'lucide-react'
+import { Loader2, MoreHorizontal, Search } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu'

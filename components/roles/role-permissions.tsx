@@ -110,16 +110,6 @@ export function RolePermissions({ roleId }: RolePermissionsProps) {
       }
     } catch (error) {
       console.error('Failed to fetch role permissions:', error)
-      // Set demo data for preview
-      if (roleId === 1) {
-        // Admin role
-        setRolePermissions([1, 2, 3, 4, 5, 6, 7, 8])
-      } else if (roleId === 2) {
-        // Teacher role
-        setRolePermissions([1, 4, 7])
-      } else {
-        setRolePermissions([])
-      }
     } finally {
       setIsLoading(false)
     }

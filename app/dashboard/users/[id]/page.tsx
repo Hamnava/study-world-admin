@@ -1,6 +1,6 @@
 "use client"
 
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { ArrowLeft, Loader2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -33,6 +33,7 @@ export default function UserDetailsPage() {
         }
       } catch (error) {
         toast.error("An unexpected error occurred")
+        console.log(error);
       } finally {
         setLoading(false)
       }
@@ -61,6 +62,7 @@ export default function UserDetailsPage() {
       }
     } catch (error) {
       toast.error("Failed to update email verification status")
+      console.log(error);
     } finally {
       setUpdatingEmail(false)
     }
@@ -88,6 +90,7 @@ export default function UserDetailsPage() {
       }
     } catch (error) {
       toast.error("Failed to update teacher approval status")
+      console.log(error);
     } finally {
       setUpdatingTeacher(false)
     }
