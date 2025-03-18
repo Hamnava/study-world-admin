@@ -97,8 +97,8 @@ export function UserManagement() {
 
       const response = await authFetcher.get<UserApiResponse>('/admin/get-users', params)
 
-      if (response.data) {
-        setUsers(response?.data || [])
+      if (response.success && Array.isArray(response.data)) {
+        setUsers(response.data)
         setTotalUsers(response.metaData?.count || 0)
       }
     } catch (error) {
@@ -119,6 +119,7 @@ export function UserManagement() {
     return () => clearTimeout(handler);
   }, [searchQuery]);
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (debouncedSearch !== '') {
       updateQueryParams({

@@ -98,10 +98,11 @@ class AuthFetcher {
     let json: ApiResponse<T>;
     try {
       json = await response.json();
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Unknown error';
       json = {
         success: false,
-        message: e.message,
+        message: errorMessage,
         statusCode: response.status,
       };
     }
@@ -137,10 +138,11 @@ class AuthFetcher {
     let json: ApiResponse<T>;
     try {
       json = await response.json();
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Unknown error';
       json = {
         success: false,
-        message: e.message,
+        message: errorMessage,
         statusCode: response.status,
       };
     }
@@ -168,10 +170,11 @@ class AuthFetcher {
     let json: ApiResponse<T>;
     try {
       json = await response.json();
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Unknown error';
       json = {
         success: false,
-        message: e.message,
+        message: errorMessage,
         statusCode: response.status,
       };
     }
@@ -199,10 +202,11 @@ class AuthFetcher {
     let json: ApiResponse<T>;
     try {
       json = await response.json();
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Unknown error';
       json = {
         success: false,
-        message: e.message,
+        message: errorMessage,
         statusCode: response.status,
       };
     }
@@ -223,10 +227,11 @@ class AuthFetcher {
     let json: ApiResponse<T>;
     try {
       json = await response.json();
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Unknown error';
       json = {
         success: false,
-        message: e.message,
+        message: errorMessage,
         statusCode: response.status,
       };
     }

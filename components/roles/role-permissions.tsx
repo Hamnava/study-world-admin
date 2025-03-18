@@ -25,8 +25,12 @@ export function RolePermissions({ roleId }: RolePermissionsProps) {
   const [isUpdating, setIsUpdating] = useState(false)
 
   useEffect(() => {
-    fetchPermissions()
-    fetchRolePermissions()
+    const fetchData = async () => {
+      await fetchPermissions()
+      await fetchRolePermissions()
+    }
+  
+    fetchData()
   }, [roleId])
 
   const fetchPermissions = async () => {
@@ -37,65 +41,6 @@ export function RolePermissions({ roleId }: RolePermissionsProps) {
       }
     } catch (error) {
       console.error('Failed to fetch permissions:', error)
-      // Set demo data for preview
-      setPermissions([
-        {
-          id: 1,
-          name: 'users:read',
-          description: 'View users',
-          action: '',
-          group: ''
-        },
-        {
-          id: 2,
-          name: 'users:write',
-          description: 'Create and update users',
-          action: '',
-          group: ''
-        },
-        {
-          id: 3,
-          name: 'users:delete',
-          description: 'Delete users',
-          action: '',
-          group: ''
-        },
-        {
-          id: 4,
-          name: 'roles:read',
-          description: 'View roles',
-          action: '',
-          group: ''
-        },
-        {
-          id: 5,
-          name: 'roles:write',
-          description: 'Create and update roles',
-          action: '',
-          group: ''
-        },
-        {
-          id: 6,
-          name: 'roles:delete',
-          description: 'Delete roles',
-          action: '',
-          group: ''
-        },
-        {
-          id: 7,
-          name: 'permissions:read',
-          description: 'View permissions',
-          action: '',
-          group: ''
-        },
-        {
-          id: 8,
-          name: 'permissions:write',
-          description: 'Assign permissions',
-          action: '',
-          group: ''
-        },
-      ])
     }
   }
 

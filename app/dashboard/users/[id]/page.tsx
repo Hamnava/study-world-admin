@@ -26,7 +26,7 @@ export default function UserDetailsPage() {
       try {
         const response = await authFetcher.get<UserDetails>(`/admin/get-user/${params.id}`);
 
-        if (response.success) {
+        if (response.success && response.data) {
           setUser(response.data)
         } else {
           toast.error("Failed to fetch user details")
