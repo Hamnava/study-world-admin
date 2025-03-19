@@ -331,6 +331,7 @@ export function UserManagement() {
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious
+                className="cursor-pointer"
                 onClick={() => {
                   if (currentPage !== 1) {
                     handlePageChange(Math.max(1, currentPage - 1));
@@ -359,7 +360,7 @@ export function UserManagement() {
                 className={
                   currentPage === totalPages
                     ? "opacity-50 cursor-not-allowed"
-                    : ""
+                    : "cursor-pointer"
                 }
               />
             </PaginationItem>
