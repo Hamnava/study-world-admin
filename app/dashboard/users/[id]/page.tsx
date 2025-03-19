@@ -263,7 +263,7 @@ export default function UserDetailsPage() {
                   Resume
                 </p>
                 <div className="flex items-center gap-2">
-                  
+                  <p>
                   <a
                     href={user.teacherInfo.resume}
                     target="_blank"
@@ -280,6 +280,7 @@ export default function UserDetailsPage() {
                   >
                     Download
                   </a>
+                  </p>
                 </div>
               </div>
 
