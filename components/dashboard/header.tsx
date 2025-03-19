@@ -48,7 +48,7 @@ export function DashboardHeader() {
 
   return (
     <header className='sticky top-0 z-40 border-b bg-background'>
-      <div className='container flex h-16 items-center justify-between py-4 ml-4'>
+      <div className='flex h-16 items-center justify-between py-4 px-4'>
         <Link
           href='/dashboard'
           className='flex items-center gap-2 font-semibold'

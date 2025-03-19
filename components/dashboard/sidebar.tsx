@@ -47,9 +47,9 @@ export function DashboardSidebar() {
   ]
 
   return (
-    <SidebarProvider className=" w-fit">
+    <SidebarProvider className="w-fit">
       <Sidebar>
-        <SidebarContent>
+        <SidebarContent className="pt-14">
           <SidebarGroup>
             <SidebarGroupLabel>Navigation</SidebarGroupLabel>
             <SidebarGroupContent>
