@@ -1,7 +1,7 @@
 import { auth } from '@/auth';
 import { getSession } from 'next-auth/react';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 interface ApiError {
   message: string;
   reason?: string;
@@ -250,7 +250,7 @@ class AuthFetcher {
   }
 }
 
-const authFetcher = new AuthFetcher(API_BASE_URL || '');
+const authFetcher = new AuthFetcher(BACKEND_URL || '');
 
 export { authFetcher };
 

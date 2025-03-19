@@ -25,26 +25,22 @@ declare module 'next-auth' {
 
 // Helper: Process login response from the server
 async function authorizeUser(endpoint: string, payload: object) {
-  // Ensure the endpoint URL is absolute
-  const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001/api/v1';
-  const fullUrl = endpoint.startsWith('http') ? endpoint : `${baseUrl}${endpoint}`;
-  
   const res = await fetcher.post<
-  {
-    user: AuthUser
-  },
+    {
+      user: AuthUser;
+    },
     typeof payload
-  >(fullUrl, payload)
- 
+  >(endpoint, payload);
   if (!res?.success || !res?.data) {
-    throw new Error(res?.message?.toString())
+    throw new Error(res?.message?.toString());
   }
-  const { user } = res.data
+  const { user } = res.data;
   return {
     ...user,
     id: user.id.toString(),
-  }
+  };
 }
+
 
 export const { handlers, auth } = NextAuth({
   providers: [
