@@ -114,7 +114,7 @@ export default function ProfilePage() {
       });
 
       if (response.data?.success && response.data.data.url) {
-        const result = await authFetcher.patch("/user/update-profile", {
+        await authFetcher.patch("/user/update-profile", {
           assetId: response.data.data.id,
         });
 
