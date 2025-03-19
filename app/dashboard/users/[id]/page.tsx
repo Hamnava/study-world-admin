@@ -263,7 +263,7 @@ export default function UserDetailsPage() {
                   Resume
                 </p>
                 <div className="flex items-center gap-2">
-                  <p>
+                  <p className="flex gap-3 mt-1">
                   <a
                     href={user.teacherInfo.resume}
                     target="_blank"
