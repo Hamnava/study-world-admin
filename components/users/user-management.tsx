@@ -342,6 +342,7 @@ export function UserManagement() {
             {Array.from({ length: totalPages }).map((_, i) => (
               <PaginationItem key={i}>
                 <PaginationLink
+                  className="cursor-pointer"
                   isActive={currentPage === i + 1}
                   onClick={() => handlePageChange(i + 1)}
                 >
