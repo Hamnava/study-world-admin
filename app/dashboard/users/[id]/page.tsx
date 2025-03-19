@@ -263,15 +263,7 @@ export default function UserDetailsPage() {
                   Resume
                 </p>
                 <div className="flex items-center gap-2">
-                  <p className="truncate text-blue-600 underline">
-                    <a
-                      href={user.teacherInfo.resume}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {user.teacherInfo.resume}
-                    </a>
-                  </p>
+                  
                   <a
                     href={user.teacherInfo.resume}
                     target="_blank"
@@ -283,6 +275,7 @@ export default function UserDetailsPage() {
                   <a
                     href={user.teacherInfo.resume}
                     download
+                    target="_blank"
                     className="px-2 py-1 text-sm text-white bg-green-500 rounded hover:bg-green-600"
                   >
                     Download
