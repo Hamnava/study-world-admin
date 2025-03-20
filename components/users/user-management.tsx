@@ -30,7 +30,7 @@ import { UserDialog } from "@/components/users/user-dialog";
 import { authFetcher } from "@/lib/auth-fetcher";
 import { Metadata, User } from "@/lib/types/response-types";
 
-import { Loader2, MoreHorizontal, Search } from "lucide-react";
+import { Loader2, MoreHorizontal, Plus, Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -62,6 +62,7 @@ export function UserManagement() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isCreateUserDialogOpen, setIsCreateUserDialogOpen] = useState(false)
 
   const limit = 10;
 
@@ -176,6 +177,10 @@ export function UserManagement() {
     router.push(`/dashboard/users/${userId}`);
   };
 
+  const handleCreateNewUser = () => {
+    router.push('/dashboard/users/create-user')
+  }
+
   const handleUserClick = (user: User) => {
     setSelectedUser(user);
     setIsDialogOpen(true);
@@ -226,6 +231,10 @@ export function UserManagement() {
               <SelectItem value="false">Unverified</SelectItem>
             </SelectContent>
           </Select>
+          <Button onClick={() => handleCreateNewUser()}>
+            <Plus className="mr-1 h-4 w-4 cursor-pointer" />
+            Create User
+          </Button>
         </div>
       </div>
 
@@ -374,6 +383,7 @@ export function UserManagement() {
         open={isDialogOpen}
         onOpenChange={setIsDialogOpen}
       />
+
     </div>
   );
 }
